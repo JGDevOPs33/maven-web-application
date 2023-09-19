@@ -1,0 +1,42 @@
+pipeline{
+    agent any  
+    tools {
+      maven 'maven3.9.4'
+    } 
+    stages{
+        stage('1.Clone'){
+            agent {
+                label 'slave1'
+            }  
+            steps 
+        }
+        stage('2.Build, qualify & upload'){
+            agent {
+                label 'slave1'
+            }  
+            steps{
+                sh "mvn package" 
+                sh "mvn sonar:sonar"
+                sh "mvn deploy"
+            } 
+        }
+        stage('3.Containerise'){
+            agent {
+                label 'dockernode'
+            } 
+            steps{
+                sh "docker build " 
+                sh "docker push " 
+            }  
+        }
+      stage('4deploy'){
+        agent  {
+            label 'kubernetesnode'
+        }
+        steps {
+            sh "kubectl apply -f app.yml"
+        }
+      }
+    }
+    post  
+}
