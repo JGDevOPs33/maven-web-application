@@ -9,7 +9,7 @@
 </head>
 </head>
 <body>
-<h1 align="center">Welcome to Yom Teruah 2023.</h1>
+<h1 align="center">Welcome to Pesach 2024.</h1>
 <h1 align="center">Yeshua of Nazareth is LORD! Shema Isreal! Without the blood of Yeshua, there is no remission of sins! REPENT!! We are developing and supporting quality Software Solutions to millions of clients globally.
 	           We are raising millionaires and billionaires IT professionals in over 50 nations.
 	We offer Training for DevOps with Linux, Kubernetes and Cloud, equipping IT Engineers for best performance.
